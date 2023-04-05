@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: |
           mkdir .\build
-          go build -o .\build\dji-moonlight-gui.exe
+          go build -ldflags="-H windowsgui" -o .\build\dji-moonlight-gui.exe
           xcopy .\assets .\build\assets\
 
       - name: Upload Artifact
