@@ -21,10 +21,13 @@ jobs:
           go-version-file: go.mod
 
       - name: Build
-        run: go build -o ./dji-moonlight-gui.exe
+        run: |
+          mkdir .\build
+          go build -o .\build\dji-moonlight-gui.exe
+          xcopy .\assets .\build\assets
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: built-exe
-          path: ./dji-moonlight-gui.exe
+          path: .\build\*
