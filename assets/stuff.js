@@ -85,6 +85,8 @@ async function getGames() {
 
       gameSelectorSelection.disabled = false;
       gameSelectorSelection.value = games[0];
+
+      document.getElementById("stream").disabled = false;
     })
     .catch((err) => {
       doRemove();
@@ -94,6 +96,8 @@ async function getGames() {
       unknownGame.selected = true;
 
       console.error(err);
+
+      document.getElementById("stream").disabled = true;
     });
 }
 
@@ -103,15 +107,17 @@ async function streamGame() {
   );
   const game = gameSelectorSelection.value;
 
+  const mode = document.getElementById("mode").value;
   const bitrate = document.getElementById("bitrate").value;
   const fps = document.getElementById("fps").value;
   const resolution = document.getElementById("resolution").value;
 
   window
     .b_streamGame({
-      game: game,
       bitrate: Number(bitrate) * 1000,
       fps: Number(fps),
+      game: game,
+      mode: mode === "net" ? "dji_net" : "dji_usb",
       resolution: {
         width: Number(resolution.split("x")[0]),
         height: Number(resolution.split("x")[1]),

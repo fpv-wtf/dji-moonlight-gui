@@ -169,9 +169,10 @@ type StreamGameResolutions struct {
 }
 
 type StreamGameParams struct {
-	Game       string                `json:"game"`
 	Bitrate    int                   `json:"bitrate"`
 	Fps        int                   `json:"fps"`
+	Game       string                `json:"game"`
+	Mode       string                `json:"mode"`
 	Resolution StreamGameResolutions `json:"resolution"`
 }
 
@@ -193,7 +194,7 @@ func (m *MoonlightManager) StreamGame(params StreamGameParams) error {
 			"-app",
 			params.Game,
 			"-platform",
-			"dji_net",
+			params.Mode,
 			"-bitrate",
 			fmt.Sprintf("%d", params.Bitrate),
 			"-fps",
@@ -202,6 +203,8 @@ func (m *MoonlightManager) StreamGame(params StreamGameParams) error {
 			fmt.Sprintf("%d", params.Resolution.Width),
 			"-h",
 			fmt.Sprintf("%d", params.Resolution.Height),
+			"-localaudio",
+			"-viewonly",
 		)
 
 		fmt.Println(cmd.Args)
@@ -216,6 +219,7 @@ func (m *MoonlightManager) StreamGame(params StreamGameParams) error {
 		m.RunningCmdLock.Unlock()
 
 		for {
+			println("reading")
 			out, err := reader.ReadString('\n')
 			if err != nil {
 				log.Println(err)
