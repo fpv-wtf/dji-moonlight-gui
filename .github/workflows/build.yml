@@ -1,0 +1,30 @@
+on:
+  push:
+    branches: [main]
+    tags:
+      - "*"
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: go.mod
+
+      - name: Build
+        run: go build -o ./dji-moonlight-gui.exe
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-exe
+          path: ./dji-moonlight-gui.exe
