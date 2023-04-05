@@ -1,0 +1,219 @@
+:root {
+  --main-color: steelblue;
+  --main-color-light: #6a95ce;
+}
+
+body {
+  background-color: #333;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+#root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+#buttons {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  width: calc(100% - 32px);
+}
+
+#consoleContainer {
+  width: calc(100% - 32px);
+  margin-top: auto;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+#consoleContainer pre {
+  font-family: "Consolas", monospace;
+  background-color: black;
+  color: white;
+  overflow: auto;
+  padding: 0.5rem;
+  flex-grow: 1;
+  height: 0;
+
+  border-radius: 8px 8px 0 0;
+}
+
+#consoleStatus {
+  display: flex;
+}
+
+#consoleStatus.running #consoleStatusText {
+  background-color: green;
+}
+
+#consoleStatus.running #consoleStatusText::after {
+  content: "Running";
+}
+
+
+#consoleStatus.stopped #consoleStatusText {
+  background-color: darkred;
+}
+
+#consoleStatus.stopped #consoleStatusText::after {
+  content: "Stopped";
+}
+
+#consoleStatusText {
+  flex: 1;
+  padding: 0.5rem;
+  text-align: center;
+  flex-grow: 1;
+  border-radius: 0 0 0 8px;
+}
+
+#forceStop {
+  width: auto;
+  border-radius: 0 0 8px 0;
+}
+
+#gameSelector {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#gameSelector select {
+  border-radius: 8px 0 0 8px;
+  border: none;
+  flex: 1;
+  text-align: center;
+}
+
+#gameSelector button {
+  border-radius: 0 8px 8px 0;
+  width: auto;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.optionsContainer label {
+  font-size: 1rem;
+  font-weight: normal;
+  color: white;
+  background-color: #555;
+  border-radius: 8px 0 0 8px;
+  padding: 0.5rem;
+
+  flex-grow: 1;
+}
+
+.optionsContainer select {
+  border: 0;
+  border-radius: 0 8px 8px 0;
+
+  min-width: 200px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #444;
+  border-radius: 8px;
+}
+
+.container.wide {
+  width: 80%;
+}
+
+.container.narrow {
+  width: 20%;
+}
+
+.container>* {
+  margin: 0.5rem 0;
+}
+
+.container h2 {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--main-color);;
+  margin-top: 16px;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-color);;
+}
+
+input {
+  width: 100%;
+  outline: none;
+  border: 2px solid var(--main-color);;
+  border-radius: 8px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: transparent;
+  color: var(--main-color);;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background-color: var(--main-color);;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  background-color: var(--main-color-light);;
+}
+
+button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+#streamButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+}
+
+
+#streamButtonsContainer #quit {
+  width: 30%;
+}
