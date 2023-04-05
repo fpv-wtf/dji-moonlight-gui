@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir .\build
           go build -o .\build\dji-moonlight-gui.exe
-          xcopy .\assets .\build\assets
+          xcopy .\assets .\build\assets\
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
