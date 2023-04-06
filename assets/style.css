@@ -173,6 +173,13 @@ label {
   color: var(--main-color);;
 }
 
+label span.details {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #aaa;
+  margin-left: 0.5rem;
+}
+
 input {
   width: 100%;
   outline: none;

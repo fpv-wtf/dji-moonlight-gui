@@ -36,6 +36,12 @@ Keep an eye on the console output for anything weird.
 1. Run `dji-moonlight-gui.exe`.
 2. Pair Moonlight with your streaming software by pressing _Pair_. The PIN will
    be displayed in the console. This only needs to be done once.
+
+   _GeForce Experience_: A popup will appear on your PC asking you to confirm
+   the pin.
+
+   _Sunshine_: You will need to go to the _Settings_ page in your browser and
+    enter the pin.
 3. Press _Refresh_ to list your games.
 4. Select a game and press _Stream_.
 

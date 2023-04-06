@@ -39,6 +39,7 @@ func (m *MoonlightManager) GetGames() ([]string, error) {
 	cmd.Args = append(cmd.Args, "list")
 
 	m.RunningStateFunc(true)
+	m.ConsoleOutputFunc(fmt.Sprintf("> %s", strings.Join(cmd.Args, " ")))
 	out, _ := cmd.CombinedOutput()
 
 	outString := strings.TrimSpace(string(out))
@@ -84,6 +85,7 @@ func (m *MoonlightManager) Pair() error {
 		reader := bufio.NewReader(combined)
 
 		m.RunningStateFunc(true)
+		m.ConsoleOutputFunc(fmt.Sprintf("> %s", strings.Join(cmd.Args, " ")))
 		cmd.Start()
 		m.RunningCmdLock.Unlock()
 
@@ -121,6 +123,7 @@ func (m *MoonlightManager) Unpair() error {
 	cmd.Args = append(cmd.Args, "unpair")
 
 	m.RunningStateFunc(true)
+	m.ConsoleOutputFunc(fmt.Sprintf("> %s", strings.Join(cmd.Args, " ")))
 	out, _ := cmd.CombinedOutput()
 
 	m.ConsoleOutputFunc(string(out))
@@ -143,6 +146,7 @@ func (m *MoonlightManager) Quit() error {
 
 	cmd.Args = append(cmd.Args, "quit")
 	m.RunningStateFunc(true)
+	m.ConsoleOutputFunc(fmt.Sprintf("> %s", strings.Join(cmd.Args, " ")))
 	out, _ := cmd.CombinedOutput()
 
 	m.ConsoleOutputFunc(string(out))

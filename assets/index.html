@@ -22,19 +22,27 @@
 
           <div id="options">
             <div class="optionsContainer">
-              <label for="mode">Mode</label>
+              <label for="mode">
+                Mode
+                <span class="details">Must match goggle-side</span>
+              </label>
               <select id="mode" value="net">
-                <option value="net" selected>Network</option>
-                <option value="usb">USB</option>
+                <option value="net" selected>RNDIS</option>
+                <option value="usb">BULK</option>
               </select>
             </div>
 
             <div class="optionsContainer">
-              <label for="bitrate">Bitrate (Mbps)</label>
+              <label for="bitrate">
+                Bitrate (Mbps)
+                <span class="details">Limited by mode</span>
+              </label>
               <select id="bitrate" value="20">
+                <option disabled>RNDIS & BULK</option>
                 <option value="10">10</option>
                 <option value="20" selected>20</option>
                 <option value="30">30</option>
+                <option disabled>BULK only</option>
                 <option value="40">40</option>
                 <option value="50">50</option>
                 <option value="60">60</option>
@@ -46,7 +54,10 @@
             </div>
 
             <div class="optionsContainer">
-              <label for="fps">FPS</label>
+              <label for="fps">
+                FPS
+                <span class="details">Limited by display refresh rate</span>
+              </label>
               <select id="fps" value="120">
                 <option value="60">60</option>
                 <option value="90">90</option>
