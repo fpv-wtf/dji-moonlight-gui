@@ -21,7 +21,7 @@ FPV Goggles. This is the PC side of the whole thing. See also:
    _Otherwise_: Install and configure
    [Sunshine](https://github.com/LizardByte/Sunshine/).
 
-1. Install [dji-moonlight-shim](https://github.com/fpv-wtf/dji-moonlight-shim)
+1. Install [dji-moonlight-shim](https://fpv.wtf/package/fpv-wtf/dji-moonlight-shim)
    on your goggles.
 2. Download the [latest
    release](https://github.com/fpv-wtf/dji-moonlight-gui/releases/latest) and
