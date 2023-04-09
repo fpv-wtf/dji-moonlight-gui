@@ -66,7 +66,7 @@ documentation](https://docs.lizardbyte.dev/projects/sunshine/en/latest/) for
 more guidance.
 
 1. Download and install
-   [Sunshine](https://github.com/LizardByte/Sunshine/releases/tag/latest).
+   [Sunshine](https://github.com/LizardByte/Sunshine/releases/latest).
 2. Sunshine runs as a background service automatically and uses a locally-hosted
    web UI for settings.
 
