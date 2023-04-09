@@ -97,3 +97,41 @@ streaming software. This only needs to be done once.
 2. Configure the settings to your liking.
 3. Press _Refresh_ to fetch the list of your games.
 4. Select a game and press _Stream_.
+
+## Modes: BULK vs. RNDIS
+
+There are two streaming modes to choose from: BULK and RNDIS. What does that
+mean?
+
+**RNDIS**
+
+This is the default mode. When the goggles are connected to your PC via USB,
+they appear as a plain old network interface. If you've ever used your phone as
+a hotspot over USB, then you've used this exact same mechanism before. Since
+it's just a network interface, all regular networking conventions apply and we
+can send data to the goggles like any other device.
+
+_The main downside is that it's slow!_ Due to reasons yet unknown, the maximum
+bitrate we're able to achieve is around 30Mbps before packet loss starts to
+creep in.
+
+**BULK**
+
+This mode is more experimental. Rather than using this indirect network route,
+we can instead send data _directly_ to the goggles via the USB interface. With
+this, we can easily achieve a bitrate of 100Mbps (as long as your PC can keep
+up).
+
+_The only downside is: driver shenanigans!_
+
+### Using BULK mode
+
+1. Use [the fpv.wtf Driver
+   Installer](https://github.com/fpv-wtf/driver-installer) to install the
+   correct drivers for the goggles. You may have used this already when you
+   rooted your goggles.
+2. **Close any fpv.wtf configurator browser tabs**.
+3. Run `dji-moonlight-gui.exe`.
+4. Select _BULK_ mode.
+5. Crank that bitrate.
+6. ...carry on as normal.
