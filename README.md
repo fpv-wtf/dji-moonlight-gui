@@ -95,5 +95,5 @@ streaming software. This only needs to be done once.
 
 1. Run `dji-moonlight-gui.exe`.
 2. Configure the settings to your liking.
-3. Press _Refresh_ to list your games.
+3. Press _Refresh_ to fetch the list of your games.
 4. Select a game and press _Stream_.
