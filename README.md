@@ -27,39 +27,15 @@ Experience).
 
 ## Usage
 
-### Setup
+### Setup: dji-moonlight-gui
 
 1. Install [dji-moonlight-shim](https://github.com/fpv-wtf/dji-moonlight-shim)
    on your goggles.
 2. Download the [latest
    release](https://github.com/fpv-wtf/dji-moonlight-gui/releases/latest) and
    extract it.
-3. Install and configure the host streaming software.
 
-   _NVIDIA GPU?_ See [Setup: NVIDIA GPU](#setup-nvidia-gpu).
-
-   _AMD/Intel GPU?_ See [Setup: AMD/Intel GPU](#setup-amdintel-gpu).
-
-#### Setup: NVIDIA GPU
-
-1. Install [GeForce
-   Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/). You
-   almost definitely already have this installed if you've ever updated your
-   drivers.
-2. Open GeForce Experience and go to _Settings_ > _SHIELD_.
-3. Enable _GameStream_.
-
-   ![nvidia_1](media/nvidia_1.png)
-
-4. GameStream will automatically detect a bunch of your games (including Steam),
-   though they won't be shown in this tab. You can be more precise by adding
-   games (i.e., your sim of choice) here manually.
-
-   Want to stream everything on your desktop directly? Add
-   `C:\Windows\System32\mstsc.exe` as a "game" while you're here. Selecting
-   `mstsc` in the GUI will then do just that.
-
-#### Setup: AMD/Intel GPU
+### Setup: Sunshine
 
 See [Sunshine
 documentation](https://docs.lizardbyte.dev/projects/sunshine/en/latest/) for
@@ -84,11 +60,7 @@ streaming software. This only needs to be done once.
 2. Press _Pair_.
 3. The PIN will be displayed in the console. This is what you'll need to enter
    in the host streaming software.
-
-   _GeForce Experience_: A popup will appear on your PC asking you to enter the
-   pin.
-
-   _Sunshine_: Go to the [PIN tab](https://localhost:47990/pin) on the web UI
+4. Go to the Sushine [PIN tab](https://localhost:47990/pin) on the web UI
    and enter the pin.
 
 ### Streaming
