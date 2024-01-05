@@ -262,7 +262,7 @@ func main() {
 			Center: true,
 			Height: WindowHeight,
 			IconId: 0,
-			Title:  "DJI Moonlight",
+			Title:  "DJI Moonlight (v1.0.2)",
 			Width:  WindowWidth,
 		},
 	})
@@ -292,15 +292,15 @@ func main() {
 	// Get current directory
 	dir, _ := os.Getwd()
 
-	w.SetSize(WindowWidth, WindowHeight, webview2.HintFixed)
-	w.Navigate("file://" + dir + "/assets/index.html")
-
 	w.Bind("b_getGames", m.GetGames)
 	w.Bind("b_pair", m.Pair)
 	w.Bind("b_unpair", m.Unpair)
 	w.Bind("b_forceStop", m.ForceStop)
 	w.Bind("b_streamGame", m.StreamGame)
 	w.Bind("b_quit", m.Quit)
+
+	w.SetSize(WindowWidth, WindowHeight, webview2.HintFixed)
+	w.Navigate("file://" + dir + "/assets/index.html")
 
 	w.Run()
 }
